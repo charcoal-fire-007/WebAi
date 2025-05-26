@@ -1,5 +1,8 @@
 package com.tlias.pojo;
 
+import lombok.Data;
+
+@Data
 public class Result {
 
     private Integer code;
