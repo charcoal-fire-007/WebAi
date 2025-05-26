@@ -1,0 +1,19 @@
+package com.tlias.pojo;
+
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class PagesResult {
+
+    private long count;
+    private List<Emp> empExpr;
+
+
+}
