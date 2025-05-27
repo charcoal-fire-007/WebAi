@@ -12,8 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class PagesResult {
 
-    private long count;
-    private List<Emp> empExpr;
-
+    private long total;
+    private List<Emp> rows;
 
 }
