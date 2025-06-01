@@ -24,4 +24,7 @@ public class Emp {
 
     //封装部门名称数
     private String deptName; //部门名称
+
+    //工作经历
+    private List<EmpExpr> exprList;
 }

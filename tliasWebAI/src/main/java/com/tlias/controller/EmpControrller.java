@@ -1,16 +1,17 @@
 package com.tlias.controller;
 
 
+import com.tlias.pojo.Emp;
 import com.tlias.pojo.EmpQueryParam;
 import com.tlias.pojo.PagesResult;
 import com.tlias.pojo.Result;
 import com.tlias.service.EmpService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @Slf4j
@@ -24,5 +25,34 @@ public class EmpControrller {
     public Result list(EmpQueryParam empQueryParam) {
         PagesResult pagesResult = empService.List(empQueryParam);
         return Result.success(pagesResult);
+    }
+
+
+    @PostMapping
+    public Result save(@RequestBody Emp emp){
+        empService.save(emp);
+        return Result.success();
+    }
+
+    @DeleteMapping
+    public Result delete(@RequestParam List<Integer> ids){
+        log.info("获取到的id {}",ids);
+        empService.delete(ids);
+        return Result.success();
+    }
+
+
+    @GetMapping("/{id}")
+    public Result getInfo(@PathVariable Integer id){
+        Emp emp  = empService.getInfo(id);
+        return Result.success(emp);
+    }
+
+
+    @PutMapping
+    public Result update(@RequestBody Emp emp){
+        log.info("获取到的员工所有信息：{}",emp);
+        empService.update(emp);
+        return Result.success();
     }
 }
