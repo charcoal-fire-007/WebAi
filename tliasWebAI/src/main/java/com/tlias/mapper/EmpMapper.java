@@ -18,7 +18,7 @@ public interface EmpMapper {
      * 查询所有的员工及其对应的部门名称
      */
 //    @Select("select e.*, d.name deptName from emp as e left join dept as d on e.dept_id = d.id")
-    public List<Emp> list(EmpQueryParam empQueryParam);
+    public List<Object> list(EmpQueryParam empQueryParam);
 
     @Options(useGeneratedKeys = true, keyProperty = "id")
     @Insert("insert into emp(username, name, gender, phone, job, salary, image, entry_date, dept_id, create_time, update_time) "
@@ -40,4 +40,6 @@ public interface EmpMapper {
     List<Map<String,Object>> countEmpJobData();
 
     List<Map<String,Object>> countEmpGenderData();
+
+    List<Object> getAllList();
 }

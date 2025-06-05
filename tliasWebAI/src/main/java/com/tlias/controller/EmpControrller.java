@@ -27,6 +27,13 @@ public class EmpControrller {
         return Result.success(pagesResult);
     }
 
+    @GetMapping("/list")
+    public Result getAllList() {
+        // 获取所有员工列表，不分页
+        List<Object> list = empService.getAllList();
+        return Result.success(list);
+    }
+
 
     @PostMapping
     public Result save(@RequestBody Emp emp){

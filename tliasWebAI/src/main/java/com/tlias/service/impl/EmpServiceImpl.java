@@ -44,8 +44,8 @@ public class EmpServiceImpl implements EmpService {
         PageHelper.startPage(empQueryParam.getPage(), empQueryParam.getPageSize());
 
         //2. 执行查询
-        List<Emp> empList = empMapper.list(empQueryParam);
-        Page<Emp> p = (Page<Emp>) empList;
+        List<Object> empList = empMapper.list(empQueryParam);
+        Page<Object> p = (Page<Object>) empList;
 
         //3. 封装结果
         return new PagesResult(p.getTotal(), p.getResult());
@@ -108,5 +108,11 @@ public class EmpServiceImpl implements EmpService {
     @Override
     public Emp getInfo(Integer id) {
         return empMapper.getById(id);
+    }
+
+    @Override
+    public List<Object> getAllList() {
+        empMapper.getAllList();
+        return empMapper.getAllList();
     }
 }

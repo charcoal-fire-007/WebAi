@@ -15,6 +15,7 @@ mybatis:
 logging:
   level:
     org.springframework.jdbc.support.JdbcTransactionManager: debug
+    com.zaxxer.hikari: INFO
 
 
 #阿里云OSS
