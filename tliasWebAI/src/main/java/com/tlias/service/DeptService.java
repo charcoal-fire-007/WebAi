@@ -10,7 +10,7 @@ public interface DeptService {
      */
     List<Dept> findAll();
 
-    void deleteById(Integer id);
+    Integer deleteById(Integer id);
 
     void save(Dept dept);
 

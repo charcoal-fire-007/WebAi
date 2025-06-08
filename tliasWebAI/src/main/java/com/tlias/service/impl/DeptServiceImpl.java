@@ -22,8 +22,14 @@ public class DeptServiceImpl implements DeptService {
     }
 
     @Override
-    public void deleteById(Integer id) {
-        deptMapper.deleteById(id);
+    public Integer deleteById(Integer id) {
+        if(0 == (Integer) deptMapper.countEmployeesByDeptId(id)){
+            deptMapper.deleteById(id);
+        }
+        else {
+            return 1;
+        }
+        return null;
     }
 
     @Override

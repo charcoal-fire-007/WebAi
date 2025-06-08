@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="tlias@localhost" uuid="9a180b0e-76e7-408a-bea0-355714e1839e">
+    <data-source source="LOCAL" name="tlias@localhost" uuid="74362db3-5ffe-4208-aceb-674de7dbadde">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/tliasWebAI/src/main/resources/application.yml</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/tlias</jdbc-url>
       <jdbc-additional-properties>

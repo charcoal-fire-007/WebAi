@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface StudentMapper {
@@ -23,4 +24,8 @@ public interface StudentMapper {
     void update(Student student);
 
     void updateViolationScoreById(Integer id, Integer score);
+
+    List<Map<String, Object>> selectcountStudentData();
+
+    List<Map<String,Object>> selectStudentDegreeData();
 }

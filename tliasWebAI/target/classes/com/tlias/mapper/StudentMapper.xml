@@ -123,4 +123,38 @@
         where s.id = #{id}
         LIMIT 1
     </select>
+
+        <select id="selectcountStudentData">
+            SELECT
+                (CASE clazz_id
+                    WHEN 1 THEN 'JavaEE就业163期'
+                    WHEN 2 THEN '前端就业90期'
+                    WHEN 3 THEN 'JavaEE就业165期'
+                    WHEN 4 THEN 'JavaEE就业166期'
+                    WHEN 5 THEN '大数据就业58期'
+                    WHEN 6 THEN 'JavaEE就业167期'
+                    WHEN 13 THEN 'Python就业205期'
+                    ELSE '其他'
+                    END) AS clazz,
+                COUNT(*) AS total
+            FROM student
+            GROUP BY clazz_id
+            ORDER BY total DESC;
+        </select>
+    <select id="selectStudentDegreeData" resultType="java.util.Map">
+        SELECT
+            (CASE degree
+                WHEN 1 THEN '初中'
+                WHEN 2 THEN '高中'
+                WHEN 3 THEN '大专'
+                WHEN 4 THEN '本科'
+                WHEN 5 THEN '硕士'
+                WHEN 6 THEN '博士'
+                ELSE '未知学历'
+                END) AS name,
+            COUNT(*) AS value
+        FROM student
+        GROUP BY degree
+        ORDER BY degree;
+    </select>
 </mapper>

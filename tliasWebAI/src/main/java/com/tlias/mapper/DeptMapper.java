@@ -26,6 +26,8 @@ public interface DeptMapper {
     @Delete("delete from dept where id = #{id}")
     void deleteById(Integer id);
 
+    @Select("SELECT COUNT(*) FROM emp WHERE dept_id = #{deptId}")
+    int countEmployeesByDeptId(Integer deptId);
     /**
      * 新增部门数据
      */

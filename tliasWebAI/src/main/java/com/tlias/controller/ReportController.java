@@ -24,7 +24,7 @@ public class ReportController {
 
     @GetMapping("/empJobData")
     public Result getEmpJobData(){
-        JobOption jobOption = reportService.getEmpJobData();
+        JobOption<String,Object> jobOption = reportService.getEmpJobData();
         return Result.success(jobOption);
     }
 
@@ -32,5 +32,17 @@ public class ReportController {
     public Result getEmpGenderData(){
         List<Map<String,Object>> genderList = reportService.getEmpGenderData();
         return Result.success(genderList);
+    }
+
+    @GetMapping("/studentCountData")
+    public Result getStudentCountData(){
+        JobOption<String,Object> jobOption = reportService.getStudentCountData();
+        return Result.success(jobOption);
+    }
+
+    @GetMapping("/studentDegreeData")
+    public Result getStudentDegreeData(){
+        List<Map<String,Object>> getStudentDegreeData = reportService.getStudentDegreeData();
+        return Result.success(getStudentDegreeData);
     }
 }

@@ -27,11 +27,14 @@ public class DeptControrller {
         return Result.success(deptList);
     }
 
-    @DeleteMapping("/{id}")
-    public Result delete(@PathVariable("id") Integer id) {
+    @DeleteMapping
+    public Result delete(@RequestParam("id") Integer id) {
         log.info("根据id删除部门：{}",id);
-        deptService.deleteById(id);
-        return Result.success();
+        if(null == deptService.deleteById(id)){
+            log.info("删除成功：{}",id);
+            return Result.success();
+        }
+        return Result.error("删除失败，部门下有员工信息");
     }
 
     @PostMapping

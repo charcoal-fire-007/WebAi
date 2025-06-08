@@ -9,8 +9,11 @@ public interface ReportService {
     /**
      * 统计员工数量
      */
-    JobOption getEmpJobData();
+    JobOption<String,Object> getEmpJobData();
 
     List<Map<String,Object>> getEmpGenderData();
 
+    JobOption<String, Object> getStudentCountData();
+
+    List<Map<String, Object>> getStudentDegreeData();
 }
