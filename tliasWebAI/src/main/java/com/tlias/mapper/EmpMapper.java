@@ -4,10 +4,7 @@ package com.tlias.mapper;
 import com.tlias.pojo.Emp;
 import com.tlias.pojo.EmpQueryParam;
 import org.apache.ibatis.annotations.*;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import java.io.LineNumberInputStream;
 import java.util.List;
 import java.util.Map;
 

@@ -2,7 +2,6 @@ package com.tlias.mapper;
 
 import com.tlias.pojo.Dept;
 import org.apache.ibatis.annotations.*;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 

@@ -4,7 +4,6 @@ import com.tlias.pojo.Clazz;
 import com.tlias.pojo.PagesResult;
 import com.tlias.pojo.Student;
 import com.tlias.pojo.StudentQueryParam;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

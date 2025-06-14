@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * 令牌校验过滤器
  */
-@Slf4j
+@Slf4j 
 @WebFilter(urlPatterns = "/*")
 public class TokenFilter implements Filter {
 

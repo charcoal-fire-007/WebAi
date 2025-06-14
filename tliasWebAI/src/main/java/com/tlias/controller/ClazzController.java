@@ -1,15 +1,14 @@
 package com.tlias.controller;
 
 
+import com.tlias.anno.LogOperation;
 import com.tlias.pojo.Clazz;
 import com.tlias.pojo.ClazzQueryParam;
 import com.tlias.pojo.PagesResult;
 import com.tlias.pojo.Result;
 import com.tlias.service.ClazzService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,6 +20,8 @@ public class ClazzController {
     @Autowired
     private ClazzService clazzService;
 //    分页查询班级列表数据
+
+    @LogOperation
     @GetMapping
     public Result list(ClazzQueryParam clazzQueryParam) {
         log.info("接受到的班级信息{}",clazzQueryParam);
@@ -29,6 +30,7 @@ public class ClazzController {
         return Result.success(list);
     }
 
+    @LogOperation
     @PostMapping
     public Result save(@RequestBody Clazz clazz) {
         log.info("接受到前端的数据{}",clazz);
@@ -36,6 +38,7 @@ public class ClazzController {
         return Result.success();
     }
 
+    @LogOperation
     @DeleteMapping("/{id}")
     public Result deleteById(@PathVariable Integer id) {
         log.info("接受到的前端传入的id{}",id);
@@ -49,6 +52,7 @@ public class ClazzController {
         return Result.success(clazz);
     }
 
+    @LogOperation
     @PutMapping
     public Result update(@RequestBody Clazz clazz)
     {

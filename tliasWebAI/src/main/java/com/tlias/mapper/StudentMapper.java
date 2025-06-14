@@ -2,9 +2,7 @@ package com.tlias.mapper;
 
 import com.tlias.pojo.Student;
 import com.tlias.pojo.StudentQueryParam;
-import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 import java.util.Map;

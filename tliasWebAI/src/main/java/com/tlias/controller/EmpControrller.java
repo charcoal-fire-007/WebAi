@@ -7,7 +7,6 @@ import com.tlias.pojo.PagesResult;
 import com.tlias.pojo.Result;
 import com.tlias.service.EmpService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

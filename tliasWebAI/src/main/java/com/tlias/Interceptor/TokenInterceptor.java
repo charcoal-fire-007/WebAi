@@ -1,6 +1,8 @@
 package com.tlias.Interceptor;
 
+import com.tlias.utils.CurrentHolder;
 import com.tlias.utils.JwtUtils;
+import io.jsonwebtoken.Claims;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -36,7 +38,10 @@ public class TokenInterceptor implements HandlerInterceptor {
 
         //5. 解析token，如果解析失败，返回错误结果（未登录）。
         try {
-            JwtUtils.parseJWT(jwt);
+            Claims claims = JwtUtils.parseJWT(jwt);
+            Integer id = Integer.valueOf(claims.get("id").toString());
+            CurrentHolder.setCurrentId(id);
+            log.info("获取到的ID值{}",CurrentHolder.getCurrentId());;
         } catch (Exception e) {
             e.printStackTrace();
             log.info("解析令牌失败, 返回错误结果");
@@ -51,6 +56,7 @@ public class TokenInterceptor implements HandlerInterceptor {
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        log.info("拦截器方法执行完毕");
+        log.info("拦截器方法执行完毕，释放ThreadLocal");
+        CurrentHolder.remove();
     }
 }
