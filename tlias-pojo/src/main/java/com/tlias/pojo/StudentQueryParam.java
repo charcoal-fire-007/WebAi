@@ -1,7 +1,6 @@
 package com.tlias.pojo;
 
 
-import com.github.pagehelper.IPage;
 import lombok.Data;
 
 @Data
